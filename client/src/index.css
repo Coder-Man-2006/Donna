@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body:not(.dashboard-body) {
+  background-color: #000; /* Set background color to black for other pages */
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: .3;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 2;
+}
+
+.logo {
+  position: relative;
+}
+
+.logo img {
+  opacity: 1;
+  width: 43%;
+  margin-right: 20px;
+  transition: filter 0.2s ease-in-out;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(233, 105, 44, 0.7) 10%, transparent 40%);
+  transition: opacity 0.2s ease-in-out, top 0.2s ease-in-out, left 0.2s ease-in-out;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+.logo img:hover + .logo::before {
+  opacity: 1;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.nav-links li {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.nav-links li:hover a {
+  color: #E9692C;
+  transform: translateX(-20px);
+}
+
+.nav-links a {
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  color: #fff;
+  font-size: 4.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 1170px) {
+  .main-content {
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .logo img {
+    width: 30%;
+    margin: 0 0 20px;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 3rem;
+    justify-content: left;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav-links li:hover a {
+    transform: none; /* Remove translate effect on hover for mobile */
+  }
+}
+
+@media (max-width: 1170px) {
+  .nav-links a {
+    font-size: 1.9rem;
+    left: 20px;
+    margin-bottom: 10px;
+    color: #E9692C;
+  }
+
+  .logo img {
+    width: 36%;
+    position: relative;
+    left: 20px;
+  }
+}

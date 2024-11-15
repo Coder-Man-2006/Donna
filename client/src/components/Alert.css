@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+.alert-wrapper {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  border-radius: 25px; /* Increase border-radius */
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease, transform 0.5s ease; /* Add transform transition */
+  z-index: 1000;
+}
+
+.alert-wrapper.show {
+  top: 20px;
+  opacity: 1;
+  transform: translateX(-50%) scale(1); /* Ensure consistent scale */
+  animation: bounce-in 0.5s ease; /* Add bounce-in animation */
+}
+
+.alert-wrapper.hide {
+  top: -100px;
+  opacity: 0;
+  transform: translateX(-50%) scale(1); /* Ensure consistent scale */
+  animation: bounce-out 0.5s ease; /* Add bounce-out animation */
+}
+
+@keyframes bounce-in {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2); /* Increase scale for more pronounced bounce */
+  }
+}
+
+@keyframes bounce-out {
+  0% {
+    transform: translateX(-50%) scale(1.2); /* Increase scale for more pronounced bounce */
+  }
+  50%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.error-alert {
+  background-color: #e74c3c; /* Red background for error */
+}
+
+.success-alert {
+  background-color: #2ecc71; /* Green background for success */
+}
+
+.alert-wrapper p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 95%;
+  height: 5px;
+  border-bottom-left-radius: 25px; /* Match the border-radius of the alert box */
+  border-bottom-right-radius: 25px; /* Match the border-radius of the alert box */
+  background: linear-gradient(to right, transparent 50%, white 50%);
+  background-size: 200% 100%;
+  animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+

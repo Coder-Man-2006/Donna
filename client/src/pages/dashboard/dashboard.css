@@ -1,0 +1,222 @@
+/* Base styles */
+:root {
+    --sidebar-width-expanded: 20%;
+    --sidebar-width-collapsed: 10%;
+    --transition-speed: 300ms;
+    --primary-text: #1a1a1a;
+    --secondary-text: #666666;
+    --border-color: #e5e7eb;
+    --hover-bg: #f3f4f6;
+    --white: #ffffff;
+    --gray-50: #f9fafb;
+  }
+  
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--gray-50);
+    color: var(--primary-text);
+  }
+  
+  /* Layout */
+  .dashboard {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Sidebar */
+  .dashboard .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: var(--white);
+    border-right: 1px solid var(--border-color);
+    transition: width var(--transition-speed) ease;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard .sidebar.expanded {
+    width: var(--sidebar-width-expanded);
+  }
+  
+  .dashboard .sidebar.collapsed {
+    width: var(--sidebar-width-collapsed);
+  }
+  
+  /* Sidebar Header */
+  .dashboard .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem; /* Increased padding */
+    border-bottom: 1px solid var(--border-color);
+    height: 80px; /* Increased height */
+  }
+  
+  .dashboard .logo {
+    height: 48px; /* Increased from 32px */
+    width: auto;
+    transition: all var(--transition-speed) ease;
+  }
+  
+  .dashboard .logo.collapsed {
+    transform: scale(0.8);
+  }
+  
+  /* Sidebar Navigation */
+  .dashboard .sidebar nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  
+  .dashboard .nav-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    color: var(--secondary-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 150ms ease;
+  }
+  
+  .dashboard .nav-button:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .dashboard .nav-button i {
+    font-size: 1.25rem;
+    min-width: 1.5rem;
+    color: #000;
+    margin-left: 10px;
+  }
+  
+  .dashboard .nav-button span {
+    margin-left: 0.75rem;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity var(--transition-speed) ease;
+  }
+  
+  .dashboard .sidebar.collapsed .nav-button span {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+  }
+  
+  /* Main Content Area */
+  .dashboard .main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width-expanded);
+    width: calc(100% - var(--sidebar-width-expanded));
+    height: 100vh;
+    transition: all var(--transition-speed) ease;
+    overflow-y: auto;
+    background-color: var(--white);
+  }
+  
+  .dashboard .main-content.collapsed {
+    margin-left: var(--sidebar-width-collapsed);
+    width: calc(100% - var(--sidebar-width-collapsed));
+  }
+  
+  /* Top Navigation */
+  .dashboard .top-nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px; /* Match sidebar header height */
+  }
+  
+  .dashboard .nav-buttons {
+    display: flex;
+    gap: 1rem;
+    
+  }
+  
+/* Update collapse button size */
+.dashboard .nav-button-secondary {
+    padding: 0.75rem; /* Increased padding */
+    color: var(--secondary-text);
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 150ms ease;
+    font-size: 1.5rem; /* Increased font size for the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* Fixed width */
+    height: 48px; /* Fixed height */
+}
+  
+.dashboard .nav-button-secondary:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  /* User Menu */
+  .dashboard .user-menu {
+    position: relative;
+  }
+  
+  .dashboard .user-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--secondary-text);
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 150ms ease;
+  }
+  
+  .dashboard .user-button:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  /* Page Content */
+  .dashboard .page-content {
+    padding: 1.5rem;
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+  
+  /* Make sure the root element takes full height */
+  #root {
+    height: 100vh;
+  }
