@@ -5,11 +5,12 @@ import { doc, getDoc } from 'firebase/firestore';
 import { FaBars, FaChevronDown } from 'react-icons/fa';
 import './Dashboard.css';
 import 'boxicons/css/boxicons.min.css';
+import WelcomeContent from './WelcomeContent';
 
 const Dashboard: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [userEmail, setUserEmail] = useState('');
   const [activePage, setActivePage] = useState('welcome');
+  const [userEmail, setUserEmail] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -99,10 +100,9 @@ const Dashboard: React.FC = () => {
 
       {/* Main Content */}
       <div className={`main-content ${isCollapsed ? 'collapsed' : ''}`}>
-
         {/* Page Content */}
         <div className="page-content fade-in">
-          {activePage === 'welcome' && <Welcome />}
+          {activePage === 'welcome' && <WelcomeContent setActivePage={setActivePage} />}
           {activePage === 'email' && <Email />}
           {activePage === 'calendar' && <Calendar />}
           {activePage === 'phone' && <Phone />}
