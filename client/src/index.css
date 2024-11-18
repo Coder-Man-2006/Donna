@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+.main-content {
+  flex-direction: column;
+  align-items: left;
+}
+
 html, body {
   height: 100%;
   overflow: hidden;
@@ -39,12 +44,7 @@ body:not(.dashboard-body) {
   background-color: #000;
 }
 
-.main-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  z-index: 2;
-}
+
 
 .logo {
   position: relative;

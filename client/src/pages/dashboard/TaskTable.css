@@ -1,0 +1,348 @@
+/* Updated Tab Container Styles */
+.tab-container {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    position: sticky;
+    top: 0; /* Keeps tabs visible when scrolling */
+    z-index: 10; /* Makes sure tabs stay above other content */
+}
+
+/* Updated Tab Styles */
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem; /* Increased border-radius for a rounded pill effect */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+.tab:hover {
+    background-color: #f1f5f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
+}
+
+.tab.active {
+    background: linear-gradient(135deg, #E9692C, #FF7E42); /* Gradient for the active tab */
+    color: #ffffff;
+    border-color: #E9692C;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow for the active tab */
+    font-weight: bold;
+}
+
+/* Focus State for Better Accessibility */
+.tab:focus {
+    outline: 2px solid #0ea5e9; /* Blue outline to indicate focus */
+    outline-offset: 2px;
+}
+
+/* Input Styling Inside Tabs */
+.tab input {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    outline: none;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tab input:focus {
+    border-color: #E9692C;
+    box-shadow: 0 0 0 3px rgba(233, 105, 44, 0.25); /* Match focus color with active tab */
+}
+
+/* Button Styles Inside Tabs */
+.tab button {
+    padding: 0.25rem 0.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    transition: color 0.2s ease;
+}
+
+.tab button:hover {
+    color: #ef4444;
+}
+
+/* Updated Task Table Styles */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+thead {
+    background-color: #f1f5f9;
+}
+
+th {
+    padding: 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 2px solid #e2e8f0;
+    font-size: 1rem;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Table Row Hover Effect */
+tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Form controls */
+input[type="text"],
+input[type="date"],
+select {
+    width: 115%;
+    padding: .5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    outline: none;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    margin: 0.25rem 0;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+select {
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Priority colors */
+select[value="ASAP"] {
+    color: #ef4444;
+}
+
+select[value="Urgent"] {
+    color: #f97316;
+}
+
+select[value="Medium"] {
+    color: #0ea5e9;
+}
+
+select[value="Low"] {
+    color: #22c55e;
+}
+
+/* Status colors */
+select[value="working on it"] {
+    color: #0ea5e9;
+}
+
+select[value="procrastinating"] {
+    color: #f97316;
+}
+
+select[value="not started"] {
+    color: #64748b;
+}
+
+/* Action buttons */
+.delete-section-button,
+td button {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.delete-section-button:hover,
+td button:hover {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+/* Updated Add Task Button */
+.add-task-button {
+    margin: 1.5rem 0;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #E9692C, #FF7E42); /* Gradient for the active tab */
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.add-task-button:hover {
+    background: linear-gradient(135deg, #E9692C, #FF7E42); /* Gradient for the active tab */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Chart Container */
+.chart-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.chart-container:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Chart Title */
+.chart-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+/* Chart Axis Styles */
+.chart-axis {
+    stroke: #94a3b8; /* Light gray for less emphasis */
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #475569;
+}
+
+/* Gridline Styling */
+.chart-gridline {
+    stroke: #e2e8f0; /* Very light gray for background lines */
+    stroke-dasharray: 3;
+}
+
+/* Bar and Line Colors */
+.chart-bar {
+    fill: url(#gradientFill); /* Gradient for bars */
+    transition: all 0.3s ease;
+}
+
+.chart-bar:hover {
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.chart-line {
+    stroke: #0ea5e9; /* Blue line for better contrast */
+    stroke-width: 2px;
+    fill: none;
+}
+
+/* Chart Point Styling */
+.chart-point {
+    fill: #0ea5e9;
+    stroke: #ffffff;
+    stroke-width: 2;
+    r: 4;
+    transition: transform 0.2s ease;
+}
+
+.chart-point:hover {
+    transform: scale(1.2);
+}
+
+/* Tooltip Styling */
+.chart-tooltip {
+    background-color: #ffffff;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.875rem;
+}
+
+/* Legend Styling */
+.chart-legend {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.chart-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-legend-color {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.25rem;
+}
+
+/* Color Scheme for Different Series */
+.chart-series-color-1 {
+    background-color: #E9692C; /* Orange for first series */
+}
+
+.chart-series-color-2 {
+    background-color: #0ea5e9; /* Blue for second series */
+}
+
+.chart-series-color-3 {
+    background-color: #22c55e; /* Green for third series */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .tab-container {
+        flex-wrap: wrap;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    th, td {
+        white-space: nowrap;
+        min-width: 120px;
+    }
+
+    .chart-container {
+        padding: 1rem;
+    }
+
+    .chart-title {
+        font-size: 1.25rem;
+    }
+}

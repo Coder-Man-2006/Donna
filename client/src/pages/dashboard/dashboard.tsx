@@ -6,6 +6,7 @@ import { FaBars, FaChevronDown } from 'react-icons/fa';
 import './Dashboard.css';
 import 'boxicons/css/boxicons.min.css';
 import WelcomeContent from './WelcomeContent';
+import TodoSection from './Todo';
 
 const Dashboard: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -16,7 +17,7 @@ const Dashboard: React.FC = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       const user = auth.currentUser;
-      if (user) {
+      if (user) {        
         setUserEmail(user.email || '');
         const userDoc = await getDoc(doc(db, 'users', user.uid));
         if (userDoc.exists()) {
@@ -107,7 +108,7 @@ const Dashboard: React.FC = () => {
           {activePage === 'calendar' && <Calendar />}
           {activePage === 'phone' && <Phone />}
           {activePage === 'donna-ai' && <DonnaAI />}
-          {activePage === 'todo' && <TodoList />}
+          {activePage === 'todo' && <TodoSection setActivePage={setActivePage} />}
         </div>
       </div>
     </div>

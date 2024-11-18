@@ -1,13 +1,13 @@
 .welcome-main {
     padding: 2rem 4rem;
     max-width: 1200px;
-    margin: 2rem auto 0; /* Add margin-top to ensure 2rem from the absolute top */
+    margin: 2rem auto 0; 
   }
   
   .welcome-dashboard-section-main {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2rem; 
   }
   
   .welcome-header-dashboard {
@@ -199,15 +199,11 @@
     position: relative;
     margin-top: 0rem;
   }
-
-  .search:focus {
-    border-color: #4f46e5;
-  }
   
   .search-input-container {
     display: flex;
     align-items: center;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #bfc1c6;
     border-radius: 0.5rem;
     padding: 0rem;
   }
@@ -234,6 +230,32 @@
     margin-bottom: .90rem;
   }
 
+
+  .add-task-button button {
+    background-color: #E9692C;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    transition: all 150ms ease-in-out;
+    box-shadow: 0 0px 0px 2px #000;
+  }
+
+  .add-task-button button:hover {
+    background-color: #381708;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+  }
 
   
   /* Responsive adjustments */
