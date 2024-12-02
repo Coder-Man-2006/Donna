@@ -1,6 +1,6 @@
 # 📅 Donna: The Digital Secretary
 
-![Donna AI Logo]([https://i.imgur.com/xyz456.png](https://imgur.com/a/y7XRUSW))
+![Donna AI Logo](https://imgur.com/a/y7XRUSW)
 
 **Donna** is a smart digital secretary designed to optimize your productivity by integrating your calendar with your to-do lists and enabling seamless interaction with an AI chatbot. Built with cutting-edge technologies, Donna helps you manage your tasks efficiently while streamlining communication.
 
